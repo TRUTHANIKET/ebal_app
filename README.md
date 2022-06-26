@@ -1,16 +1,4 @@
-# ebal_app
+This is made by aniket singh please use it for learning purpose and do not try to steal the content used here.
+<3
 
-A new Flutter project.
-
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+![image](https://user-images.githubusercontent.com/100013837/175820192-1da7a14d-f0e2-42ad-b38a-1ee7502f6c1b.png)
