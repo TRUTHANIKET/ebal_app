@@ -8,6 +8,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.2.0"
+  animated_text_kit:
+    dependency: "direct main"
+    description:
+      name: animated_text_kit
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "4.2.2"
   archive:
     dependency: transitive
     description:
@@ -178,12 +185,12 @@ packages:
     source: hosted
     version: "2.1.2"
   simple_animations:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: simple_animations
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "4.1.0"
+    version: "4.2.0"
   sky_engine:
     dependency: transitive
     description: flutter

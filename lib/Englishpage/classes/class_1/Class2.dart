@@ -5,20 +5,18 @@ import 'package:url_launcher/url_launcher.dart';
 
 
 
-class Class_1 extends StatefulWidget {
-  const Class_1({Key? key}) : super(key: key);
+class Class_2 extends StatefulWidget {
+  const Class_2({Key? key}) : super(key: key);
 
   @override
-  State<Class_1> createState() => _Class_1State();
+  State<Class_2> createState() => _Class_2State();
 }
 
 
-class _Class_1State extends State<Class_1> {
+class _Class_2State extends State<Class_2> {
 
   @override
   Widget build(BuildContext context) {
-
-
     return Scaffold(
       body:
       SingleChildScrollView(
@@ -30,7 +28,7 @@ class _Class_1State extends State<Class_1> {
               SizedBox(height:20 ),
 
               SafeArea(child: Container(
-                child: Text('Class 1',style:
+                child: Text('Class 2',style:
                 TextStyle(
                     fontFamily: 'Nunito',
                     fontSize: 20
@@ -38,10 +36,10 @@ class _Class_1State extends State<Class_1> {
                 ),),
 
               ),),
-              
+
               GestureDetector(
                 onTap: () {
-              _launchUrl('https://drive.google.com/file/d/1w3GPi1JcTtNF_i_POrHwSAH5_YfsWBSY/view?usp=drive_open');
+                  _launchUrl('https://drive.google.com/file/d/1s6pEVsEQKvmDa3kUq6zI_ozDYOivh_Jn/view');
 
                 },
                 child: SafeArea(
@@ -107,7 +105,7 @@ class _Class_1State extends State<Class_1> {
               SizedBox(height:30 ),
               GestureDetector(
                 onTap: () {
-                  _launchUrl('https://drive.google.com/file/d/1c-45z9_NWuMWoUrcsB5iXTMWiVxcfJBi/view');
+                  _launchUrl('https://drive.google.com/open?id=1UEgTEpOlngCmqmOo8pwAFIO5EcdWQI4o');
 
                 },
                 child: SafeArea(
@@ -173,7 +171,7 @@ class _Class_1State extends State<Class_1> {
               SizedBox(height:30 ),
               GestureDetector(
                 onTap: (){
-                  _launchUrl('https://drive.google.com/file/d/1sCuohQt4olhCyKZ6nkg9JbzpsSO81okh/view');
+                  _launchUrl('https://drive.google.com/file/d/1Td1-bjl7Er5jsS2tygjpHept8dQyIFBL/view');
                 },
                 child: SafeArea(
 
@@ -250,7 +248,7 @@ Future<void> _launchUrl(String urlString)async{
 
   }
   else
-    {
-      print('cannot launch it bruh');
-    }
+  {
+    print('cannot launch it bruh');
+  }
 }

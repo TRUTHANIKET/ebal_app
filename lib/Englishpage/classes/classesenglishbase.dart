@@ -1,8 +1,10 @@
-import 'package:ebal_app/Englishpage/classes/class_1/Class1.dart';
+
 import 'package:ebal_app/home_page.dart';
 import 'package:flutter/material.dart';
 
 import '../Englishpagebase.dart';
+import 'class_1/Class1.dart';
+import 'class_1/Class2.dart';
 
 class Classeseng extends StatelessWidget {
   const Classeseng({Key? key}) : super(key: key);
@@ -80,46 +82,51 @@ class Classeseng extends StatelessWidget {
                       ),
                       SizedBox(width: 20),
                       Expanded(
-                        child: Stack(
+                        child: GestureDetector(
+                          onTap: (){
+                            Navigator.push(context, MaterialPageRoute(builder: (context)=>Class_2()));
+                          },
+                          child: Stack(
 
-                          children: [
-                            Container(
-                              height: 150,
-                              width: 200,
+                            children: [
+                              Container(
+                                height: 150,
+                                width: 200,
 
-                              decoration: BoxDecoration(
+                                decoration: BoxDecoration(
 
-                                  gradient: LinearGradient(
-                                      colors: [
-                                        Color.fromARGB(255, 45, 118, 255),
-                                        Color.fromARGB(255, 112, 40, 255),
+                                    gradient: LinearGradient(
+                                        colors: [
+                                          Color.fromARGB(255, 45, 118, 255),
+                                          Color.fromARGB(255, 112, 40, 255),
 
 
-                                      ]
-                                  ),
-                                  borderRadius: BorderRadius.circular(10)
+                                        ]
+                                    ),
+                                    borderRadius: BorderRadius.circular(10)
+
+                                ),
 
                               ),
+                              Positioned(
+                                top: 55,
+                                left: 0,
+                                right: 0,
 
-                            ),
-                            Positioned(
-                              top: 55,
-                              left: 0,
-                              right: 0,
+                                child: Container(
+                                  alignment: Alignment.center,
+                                  child: Text('Class 2',style:
+                                  TextStyle(
+                                    fontFamily: 'Nunito',
+                                    color: Colors.white,
+                                    fontSize: 27,
 
-                              child: Container(
-                                alignment: Alignment.center,
-                                child: Text('Class 2',style:
-                                TextStyle(
-                                  fontFamily: 'Nunito',
-                                  color: Colors.white,
-                                  fontSize: 27,
-
-                                ),),
+                                  ),),
+                                ),
                               ),
-                            ),
 
-                          ],
+                            ],
+                          ),
                         ),
                       ),
 
