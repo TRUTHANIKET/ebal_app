@@ -2,6 +2,8 @@ import 'package:ebal_app/Englishpage/Englishpagebase.dart';
 import 'package:flutter/material.dart';
 import 'package:awesome_dialog/awesome_dialog.dart';
 
+import 'knowmore.dart';
+
 class Home_page extends StatelessWidget {
   const Home_page({Key? key}) : super(key: key);
 
@@ -21,6 +23,7 @@ class Home_page extends StatelessWidget {
              padding: EdgeInsets.symmetric(vertical: 20,horizontal: 20),
             child: GestureDetector(
               onTap: (){
+                Navigator.push(context, MaterialPageRoute(builder: (context)=>know_more()));
 
               },
               child: Stack(

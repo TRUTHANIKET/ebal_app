@@ -13,7 +13,7 @@ void main() {
   ]);
   runApp(MaterialApp(
     home:AnimatedSplashScreen(
-      splash:Lottie.asset("assets/circle.json",),
+      splash:Lottie.asset("assets/hi.json",),
       splashIconSize: 300,
       splashTransition: SplashTransition.fadeTransition,
 

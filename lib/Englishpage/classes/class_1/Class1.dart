@@ -107,6 +107,7 @@ class _Class_1State extends State<Class_1> {
               SizedBox(height:30 ),
               GestureDetector(
                 onTap: () {
+
                   _launchUrl('https://drive.google.com/file/d/1c-45z9_NWuMWoUrcsB5iXTMWiVxcfJBi/view');
 
                 },
@@ -246,11 +247,16 @@ class _Class_1State extends State<Class_1> {
 
 Future<void> _launchUrl(String urlString)async{
   if(await canLaunch(urlString)){
-    await launch(urlString);
+    await launch(urlString,
+
+        forceWebView: true,
+        forceSafariVC: true,
+        enableJavaScript: true
+    );
 
   }
   else
-    {
-      print('cannot launch it bruh');
-    }
+  {
+    print('cannot launch it bruh');
+  }
 }

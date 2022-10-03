@@ -71,7 +71,7 @@ class _know_moreState extends State<know_more> {
                   borderRadius: BorderRadius.circular(20)
 
               ),
-              child: Image.asset('assets/frbz.jpg'),
+              child: Image.asset('assets/frbz.png'),
             ),
             SizedBox(height: 80),
             Container(
@@ -100,6 +100,7 @@ class _know_moreState extends State<know_more> {
                     borderRadius: BorderRadius.circular(20)
 
                 ),
+               
                 child: Lottie.asset('assets/github.json',height:120),
               ),
             ),
@@ -128,7 +129,7 @@ class _know_moreState extends State<know_more> {
             SizedBox(height: 20),
             GestureDetector(
               onTap: () {
-                _launchUrl('http://anicreate.tech');
+                _launchUrl('https://anicreate.tech');
 
               },
               child: Container(
@@ -140,6 +141,7 @@ class _know_moreState extends State<know_more> {
                     borderRadius: BorderRadius.circular(20)
 
                 ),
+                
                 child: Lottie.asset('assets/port.json',height: 100),
               ),
 
@@ -157,15 +159,12 @@ class _know_moreState extends State<know_more> {
     );
   }
 
-  void openBrowserURL({required url, required bool inApp}) {
 
-  }
 }
+
 Future<void> _launchUrl(String urlString)async{
   if(await canLaunch(urlString)){
-    await launch(urlString,
-    forceWebView: true,
-    forceSafariVC: true);
+    await launch(urlString);
 
   }
   else
