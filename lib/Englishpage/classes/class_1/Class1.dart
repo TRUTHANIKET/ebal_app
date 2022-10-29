@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:url_launcher/link.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -16,6 +17,7 @@ class Class_1 extends StatefulWidget {
 class _Class_1State extends State<Class_1> {
 
   @override
+    InterstitialAd? interstitialAd;
   Widget build(BuildContext context) {
 
 
@@ -41,7 +43,31 @@ class _Class_1State extends State<Class_1> {
               
               GestureDetector(
                 onTap: () {
+                  
               _launchUrl('https://drive.google.com/file/d/1w3GPi1JcTtNF_i_POrHwSAH5_YfsWBSY/view?usp=drive_open');
+               InterstitialAd.load(adUnitId: 'ca-app-pub-3940256099942544/8691691433', 
+                request:const AdRequest(), adLoadCallback: InterstitialAdLoadCallback
+                (onAdLoaded: (ad){
+                  interstitialAd=ad;
+                  interstitialAd!.show();
+                }, 
+                onAdFailedToLoad: (err){
+                  debugPrint(err.message);
+                })
+                );
+                interstitialAd!.fullScreenContentCallback=FullScreenContentCallback(
+                  onAdFailedToShowFullScreenContent: ((ad, error) => {
+                    ad.dispose(),
+                    interstitialAd!.dispose(),
+                    debugPrint(error.message)
+                    
+                  }),
+                  onAdDismissedFullScreenContent: (ad){
+                    ad.dispose();
+                    interstitialAd!.dispose();
+                  }
+                );
+
 
                 },
                 child: SafeArea(
@@ -107,7 +133,28 @@ class _Class_1State extends State<Class_1> {
               SizedBox(height:30 ),
               GestureDetector(
                 onTap: () {
-
+ InterstitialAd.load(adUnitId: 'ca-app-pub-3940256099942544/8691691433', 
+                request:const AdRequest(), adLoadCallback: InterstitialAdLoadCallback
+                (onAdLoaded: (ad){
+                  interstitialAd=ad;
+                  interstitialAd!.show();
+                }, 
+                onAdFailedToLoad: (err){
+                  debugPrint(err.message);
+                })
+                );
+                interstitialAd!.fullScreenContentCallback=FullScreenContentCallback(
+                  onAdFailedToShowFullScreenContent: ((ad, error) => {
+                    ad.dispose(),
+                    interstitialAd!.dispose(),
+                    debugPrint(error.message)
+                    
+                  }),
+                  onAdDismissedFullScreenContent: (ad){
+                    ad.dispose();
+                    interstitialAd!.dispose();
+                  }
+                );
                   _launchUrl('https://drive.google.com/file/d/1c-45z9_NWuMWoUrcsB5iXTMWiVxcfJBi/view');
 
                 },
@@ -174,6 +221,28 @@ class _Class_1State extends State<Class_1> {
               SizedBox(height:30 ),
               GestureDetector(
                 onTap: (){
+                   InterstitialAd.load(adUnitId: 'ca-app-pub-3940256099942544/8691691433', 
+                request:const AdRequest(), adLoadCallback: InterstitialAdLoadCallback
+                (onAdLoaded: (ad){
+                  interstitialAd=ad;
+                  interstitialAd!.show();
+                }, 
+                onAdFailedToLoad: (err){
+                  debugPrint(err.message);
+                })
+                );
+                interstitialAd!.fullScreenContentCallback=FullScreenContentCallback(
+                  onAdFailedToShowFullScreenContent: ((ad, error) => {
+                    ad.dispose(),
+                    interstitialAd!.dispose(),
+                    debugPrint(error.message)
+                    
+                  }),
+                  onAdDismissedFullScreenContent: (ad){
+                    ad.dispose();
+                    interstitialAd!.dispose();
+                  }
+                );
                   _launchUrl('https://drive.google.com/file/d/1sCuohQt4olhCyKZ6nkg9JbzpsSO81okh/view');
                 },
                 child: SafeArea(

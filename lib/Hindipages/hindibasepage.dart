@@ -1,12 +1,16 @@
 import 'package:ebal_app/Englishpage/quotes/quotesenglish.dart';
 import 'package:flutter/material.dart';
 import 'dart:math' as math;
-import 'classes/classesenglishbase.dart';
 
 
-class Engbasepage extends StatelessWidget {
-  const Engbasepage({Key? key}) : super(key: key);
+class Hindibasepage extends StatefulWidget {
+  const Hindibasepage({Key? key}) : super(key: key);
 
+  @override
+  State<Hindibasepage> createState() => _HindibasepageState();
+}
+
+class _HindibasepageState extends State<Hindibasepage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -17,7 +21,7 @@ class Engbasepage extends StatelessWidget {
                 SizedBox(height:50 ),
               GestureDetector(
                 onTap: (){
-                  Navigator.push(context, MaterialPageRoute(builder: (context)=>Classeseng()));
+                  // Navigator.push(context, MaterialPageRoute(builder: (context)=>Classeseng()));
                 },
                 child: SafeArea(
 
@@ -354,5 +358,7 @@ class Engbasepage extends StatelessWidget {
         ),
       ),
     );
+
+
   }
 }

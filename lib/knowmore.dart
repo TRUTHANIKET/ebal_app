@@ -1,6 +1,7 @@
 import 'dart:ffi';
 
 import 'package:flutter/material.dart';
+import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:lottie/lottie.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -13,6 +14,7 @@ class know_more extends StatefulWidget {
 
 class _know_moreState extends State<know_more> {
   @override
+  InterstitialAd? interstitialAd;
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
@@ -129,7 +131,8 @@ class _know_moreState extends State<know_more> {
             SizedBox(height: 20),
             GestureDetector(
               onTap: () {
-                _launchUrl('https://anicreate.tech');
+                // _launchUrl('https://anicreate.tech');
+              
 
               },
               child: Container(

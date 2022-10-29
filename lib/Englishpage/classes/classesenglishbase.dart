@@ -6,9 +6,14 @@ import '../Englishpagebase.dart';
 import 'class_1/Class1.dart';
 import 'class_1/Class2.dart';
 
-class Classeseng extends StatelessWidget {
+class Classeseng extends StatefulWidget {
   const Classeseng({Key? key}) : super(key: key);
 
+  @override
+  State<Classeseng> createState() => _ClassesengState();
+}
+
+class _ClassesengState extends State<Classeseng> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

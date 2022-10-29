@@ -1,13 +1,22 @@
 import 'package:ebal_app/Englishpage/Englishpagebase.dart';
+import 'package:ebal_app/Englishpage/classes/class_1/Class1.dart';
+import 'package:ebal_app/Hindipages/hindibasepage.dart';
 import 'package:flutter/material.dart';
 import 'package:awesome_dialog/awesome_dialog.dart';
+import 'package:google_mobile_ads/google_mobile_ads.dart';
 
 import 'knowmore.dart';
 
-class Home_page extends StatelessWidget {
+class Home_page extends StatefulWidget {
   const Home_page({Key? key}) : super(key: key);
 
   @override
+  State<Home_page> createState() => _Home_pageState();
+}
+
+class _Home_pageState extends State<Home_page> {
+  @override
+  InterstitialAd? interstitialAd;
   Widget build(BuildContext context) {
     return
     Scaffold(
@@ -87,53 +96,107 @@ class Home_page extends StatelessWidget {
         child: Row(
           children: [
             Expanded(
-              child: Stack(
+              child: GestureDetector(
+                onTap: (){
+                   Navigator.push(context, MaterialPageRoute(builder: (context)=>Hindibasepage()));
+//add the page
 
-                children: [
-                  Container(
-                    height: 150,
-                    width: 200,
+                    InterstitialAd.load(adUnitId: 'ca-app-pub-3940256099942544/8691691433', 
+                request:const AdRequest(), adLoadCallback: InterstitialAdLoadCallback
+                (onAdLoaded: (ad){
+                  interstitialAd=ad;
+                  interstitialAd!.show();
+                }, 
+                onAdFailedToLoad: (err){
+                  debugPrint(err.message);
+                })
+                );
+                interstitialAd!.fullScreenContentCallback=FullScreenContentCallback(
+                  onAdFailedToShowFullScreenContent: ((ad, error) => {
+                    ad.dispose(),
+                    interstitialAd!.dispose(),
+                    debugPrint(error.message)
+                    
+                  }),
+                  onAdDismissedFullScreenContent: (ad){
+                    ad.dispose();
+                    interstitialAd!.dispose();
+                  }
+                );
 
-                    decoration: BoxDecoration(
-
-                        gradient: LinearGradient(
-                        colors: [
-                          Color.fromARGB(255, 112, 40, 255),
-                          Color.fromARGB(255, 45, 118, 255),
-
-
-                        ]
+                },
+                child: Stack(
+              
+                  children: [
+                    Container(
+                      height: 150,
+                      width: 200,
+              
+                      decoration: BoxDecoration(
+              
+                          gradient: LinearGradient(
+                          colors: [
+                            Color.fromARGB(255, 112, 40, 255),
+                            Color.fromARGB(255, 45, 118, 255),
+              
+              
+                          ]
+                      ),
+                          borderRadius: BorderRadius.circular(10)
+              
+                      ),
+              
                     ),
-                        borderRadius: BorderRadius.circular(10)
-
+                    Positioned(
+                      top: 50,
+                      left: 0,
+                      right: 0,
+              
+                      child: Container(
+                        alignment: Alignment.center,
+                        child: Text('हिंदी',style:
+                        TextStyle(
+                          fontFamily: 'Nunito',
+                          color: Colors.white,
+                          fontSize: 37,
+              
+                        ),),
+                      ),
                     ),
-
-                  ),
-                  Positioned(
-                    top: 50,
-                    left: 0,
-                    right: 0,
-
-                    child: Container(
-                      alignment: Alignment.center,
-                      child: Text('हिंदी',style:
-                      TextStyle(
-                        fontFamily: 'Nunito',
-                        color: Colors.white,
-                        fontSize: 37,
-
-                      ),),
-                    ),
-                  ),
-
-                ],
+              
+                  ],
+                ),
               ),
             ),
+          
             SizedBox(width: 20),
             Expanded(
               child: GestureDetector(
                 onTap: (){
                   Navigator.push(context, MaterialPageRoute(builder: (context)=>Engbasepage()));
+                    InterstitialAd.load(adUnitId: 'ca-app-pub-3940256099942544/8691691433', 
+                request:const AdRequest(), adLoadCallback: InterstitialAdLoadCallback
+                (onAdLoaded: (ad){
+                  interstitialAd=ad;
+                  interstitialAd!.show();
+                }, 
+                onAdFailedToLoad: (err){
+                  debugPrint(err.message);
+                })
+                );
+                interstitialAd!.fullScreenContentCallback=FullScreenContentCallback(
+                  onAdFailedToShowFullScreenContent: ((ad, error) => {
+                    ad.dispose(),
+                    interstitialAd!.dispose(),
+                    debugPrint(error.message)
+                    
+                  }),
+                  onAdDismissedFullScreenContent: (ad){
+                    ad.dispose();
+                    interstitialAd!.dispose();
+                  }
+                );
+
                 },
                 child: Stack(
 
@@ -190,49 +253,77 @@ class Home_page extends StatelessWidget {
               children: [
                 Expanded(
 
-                  child: Stack(
+                  child: GestureDetector(
+                    onTap: (){
+                        InterstitialAd.load(adUnitId: 'ca-app-pub-3940256099942544/8691691433', 
+                request:const AdRequest(), adLoadCallback: InterstitialAdLoadCallback
+                (onAdLoaded: (ad){
+                  interstitialAd=ad;
+                  interstitialAd!.show();
+                }, 
+                onAdFailedToLoad: (err){
+                  debugPrint(err.message);
+                })
+                );
+                interstitialAd!.fullScreenContentCallback=FullScreenContentCallback(
+                  onAdFailedToShowFullScreenContent: ((ad, error) => {
+                    ad.dispose(),
+                    interstitialAd!.dispose(),
+                    debugPrint(error.message)
+                    
+                  }),
+                  onAdDismissedFullScreenContent: (ad){
+                    ad.dispose();
+                    interstitialAd!.dispose();
+                  }
+                );
 
 
-                    children: [
-                      Container(
-
-
-                        height: 150,
-                        width: 200,
-
-                        decoration: BoxDecoration(
-
-                            gradient: LinearGradient(
-                                colors: [
-                                  Color.fromARGB(255, 112, 40, 255),
-                                  Color.fromARGB(255, 45, 118, 255),
-
-
-                                ]
-                            ),
-                            borderRadius: BorderRadius.circular(10)
-
+                    },
+                    child: Stack(
+                  
+                  
+                      children: [
+                        Container(
+                  
+                  
+                          height: 150,
+                          width: 200,
+                  
+                          decoration: BoxDecoration(
+                  
+                              gradient: LinearGradient(
+                                  colors: [
+                                    Color.fromARGB(255, 112, 40, 255),
+                                    Color.fromARGB(255, 45, 118, 255),
+                  
+                  
+                                  ]
+                              ),
+                              borderRadius: BorderRadius.circular(10)
+                  
+                          ),
+                  
                         ),
-
-                      ),
-                      Positioned(
-                        top: 52,
-                        left: 0,
-                        right: 0,
-
-                        child: Container(
-                          alignment: Alignment.center,
-                          child: Text('मराठी',style:
-                          TextStyle(
-                            fontFamily: 'Nunito',
-                            color: Colors.white,
-                            fontSize: 37,
-
-                          ),),
+                        Positioned(
+                          top: 52,
+                          left: 0,
+                          right: 0,
+                  
+                          child: Container(
+                            alignment: Alignment.center,
+                            child: Text('मराठी',style:
+                            TextStyle(
+                              fontFamily: 'Nunito',
+                              color: Colors.white,
+                              fontSize: 37,
+                  
+                            ),),
+                          ),
                         ),
-                      ),
-
-                    ],
+                  
+                      ],
+                    ),
                   ),
                 ),
                 SizedBox(width: 20),
@@ -298,6 +389,7 @@ class Home_page extends StatelessWidget {
                     ),
                   ),
                 ),
+                
               ],
             ),
           ),
@@ -344,7 +436,35 @@ class Home_page extends StatelessWidget {
        //     ),
        //   ),
        // ),
+  ElevatedButton(onPressed: (){
+                    Navigator.push(context, MaterialPageRoute(builder: (context)=>Class_1()));
+               
+                // _launchUrl('https://anicreate.tech');
+                InterstitialAd.load(adUnitId: 'ca-app-pub-3940256099942544/8691691433', 
+                request:const AdRequest(), adLoadCallback: InterstitialAdLoadCallback
+                (onAdLoaded: (ad){
+                  interstitialAd=ad;
+                  interstitialAd!.show();
+                }, 
+                onAdFailedToLoad: (err){
+                  debugPrint(err.message);
+                })
+                );
+                interstitialAd!.fullScreenContentCallback=FullScreenContentCallback(
+                  onAdFailedToShowFullScreenContent: ((ad, error) => {
+                    ad.dispose(),
+                    interstitialAd!.dispose(),
+                    debugPrint(error.message)
+                    
+                  }),
+                  onAdDismissedFullScreenContent: (ad){
+                    ad.dispose();
+                    interstitialAd!.dispose();
+                  }
+                );
 
+              
+            }, child: Text("click")),
 
 
         ]),
